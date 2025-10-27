@@ -1,0 +1,2 @@
+- [x] Add Web Development MERN card to services
+- [x] Add MERN stack technologies to About section
