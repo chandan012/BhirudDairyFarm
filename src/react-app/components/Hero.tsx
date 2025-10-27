@@ -1,8 +1,22 @@
+import { useEffect } from "react";
 import { CheckCircle, Droplets, Heart } from 'lucide-react';
 
 export default function Hero() {
+  useEffect(() => {
+    const setVh = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden">
+    <section
+      id="home"
+      className="relative flex items-center bg-gradient-to-br from-green-50 to-blue-50 overflow-hidden"
+      style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }} // safe fallback
+    >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-64 h-64 bg-green-300 rounded-full blur-3xl"></div>
@@ -68,7 +82,8 @@ export default function Hero() {
               <img
                 src="/image2.jpg"
                 alt="Fresh milk and dairy products"
-                className="w-full h-[550px] object-cover"
+                // responsive heights: mobile smaller, desktop larger
+                className="w-full h-[300px] md:h-[450px] lg:h-[550px] object-cover block"
               />
             </div>
             {/* Decorative Elements */}
