@@ -827,13 +827,13 @@ globalThis.PerformanceObserverEntryList = PerformanceObserverEntryList;
 globalThis.PerformanceResourceTiming = PerformanceResourceTiming;
 var compose = (middleware, onError, onNotFound) => {
   return (context, next) => {
-    let index = -1;
+    let index2 = -1;
     return dispatch(0);
     async function dispatch(i) {
-      if (i <= index) {
+      if (i <= index2) {
         throw new Error("next() called multiple times");
       }
-      index = i;
+      index2 = i;
       let res;
       let isError = false;
       let handler;
@@ -918,8 +918,8 @@ var handleParsingAllValues = (form, key, value) => {
 var handleParsingNestedValues = (form, key, value) => {
   let nestedForm = form;
   const keys = key.split(".");
-  keys.forEach((key2, index) => {
-    if (index === keys.length - 1) {
+  keys.forEach((key2, index2) => {
+    if (index2 === keys.length - 1) {
       nestedForm[key2] = value;
     } else {
       if (!nestedForm[key2] || typeof nestedForm[key2] !== "object" || Array.isArray(nestedForm[key2]) || nestedForm[key2] instanceof File) {
@@ -943,8 +943,8 @@ var splitRoutingPath = (routePath) => {
 };
 var extractGroupsFromPath = (path) => {
   const groups = [];
-  path = path.replace(/\{[^}]+\}/g, (match, index) => {
-    const mark = `@${index}`;
+  path = path.replace(/\{[^}]+\}/g, (match, index2) => {
+    const mark = `@${index2}`;
     groups.push([mark, match]);
     return mark;
   });
@@ -1757,7 +1757,7 @@ var Node$1 = class Node {
   #index;
   #varIndex;
   #children = /* @__PURE__ */ Object.create(null);
-  insert(tokens, index, paramMap, context, pathErrorCheckOnly) {
+  insert(tokens, index2, paramMap, context, pathErrorCheckOnly) {
     if (tokens.length === 0) {
       if (this.#index !== void 0) {
         throw PATH_ERROR;
@@ -1765,7 +1765,7 @@ var Node$1 = class Node {
       if (pathErrorCheckOnly) {
         return;
       }
-      this.#index = index;
+      this.#index = index2;
       return;
     }
     const [token, ...restTokens] = tokens;
@@ -1812,7 +1812,7 @@ var Node$1 = class Node {
         node = this.#children[token] = new Node$1();
       }
     }
-    node.insert(restTokens, index, paramMap, context, pathErrorCheckOnly);
+    node.insert(restTokens, index2, paramMap, context, pathErrorCheckOnly);
   }
   buildRegExpStr() {
     const childKeys = Object.keys(this.#children).sort(compareKey);
@@ -1835,7 +1835,7 @@ var Node$1 = class Node {
 var Trie = class {
   #context = { varIndex: 0 };
   #root = new Node$1();
-  insert(path, index, pathErrorCheckOnly) {
+  insert(path, index2, pathErrorCheckOnly) {
     const paramAssoc = [];
     const groups = [];
     for (let i = 0; ; ) {
@@ -1861,7 +1861,7 @@ var Trie = class {
         }
       }
     }
-    this.#root.insert(tokens, index, paramAssoc, this.#context, pathErrorCheckOnly);
+    this.#root.insert(tokens, index2, paramAssoc, this.#context, pathErrorCheckOnly);
     return paramAssoc;
   }
   buildRegExp() {
@@ -2045,8 +2045,8 @@ var RegExpRouter = class {
       if (!match) {
         return [[], emptyParam];
       }
-      const index = match.indexOf("", 1);
-      return [matcher[1][index], match];
+      const index2 = match.indexOf("", 1);
+      return [matcher[1][index2], match];
     };
     return this.match(method, path);
   }
@@ -2319,7 +2319,15 @@ var Hono2 = class extends Hono$1 {
   }
 };
 const app = new Hono2();
-const workerEntry = app ?? {};
+app.get("/", (c) => {
+  return c.text("Hello from Hono!");
+});
+const index = {
+  async fetch(request, env2, ctx) {
+    return app.fetch(request, env2, ctx);
+  }
+};
+const workerEntry = index ?? {};
 export {
   workerEntry as default
 };

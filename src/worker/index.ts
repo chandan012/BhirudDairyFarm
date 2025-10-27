@@ -2,4 +2,12 @@ import { Hono } from "hono";
 
 const app = new Hono<{ Bindings: Env }>();
 
-export default app;
+app.get("/", (c) => {
+  return c.text("Hello from Hono!");
+});
+
+export default {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext) {
+    return app.fetch(request, env, ctx);
+  },
+};
