@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-blue-300 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-0 md:py-2 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="space-y-8">
@@ -32,44 +32,44 @@ export default function Hero() {
                 <Heart className="w-4 h-4 mr-2" />
                 From Our Farm to Your Table
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Pure & Fresh
                 <span className="block text-green-600">Dairy Products</span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Experience the authentic taste of farm-fresh dairy products. We own and operate our 
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                Experience the authentic taste of farm-fresh dairy products. We own and operate our
                 farm in Bhusawal, ensuring complete quality control from cow to your kitchen.
               </p>
             </div>
 
             {/* Key Features */}
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               <div className="flex items-center space-x-3">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                <span className="text-lg text-gray-700">100% Pure & Natural - No Additives</span>
+                <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-green-600 flex-shrink-0" />
+                <span className="text-base md:text-lg text-gray-700">100% Pure & Natural - No Additives</span>
               </div>
               <div className="flex items-center space-x-3">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                <span className="text-lg text-gray-700">Direct from Our Own Farm</span>
+                <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-green-600 flex-shrink-0" />
+                <span className="text-base md:text-lg text-gray-700">Direct from Our Own Farm</span>
               </div>
               <div className="flex items-center space-x-3">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
-                <span className="text-lg text-gray-700">Daily Fresh Production</span>
+                <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-green-600 flex-shrink-0" />
+                <span className="text-base md:text-lg text-gray-700">Daily Fresh Production</span>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a 
-                href="#products" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-3 md:pt-4">
+              <a
+                href="#products"
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 text-sm md:text-base"
               >
-                <Droplets className="w-5 h-5 mr-2" />
+                <Droplets className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                 Explore Our Products
               </a>
-              <a 
-                href="#farm" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border-2 border-green-200"
+              <a
+                href="#farm"
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-green-600 font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border-2 border-green-200 text-sm md:text-base"
               >
                 Visit Our Farm
               </a>
@@ -82,8 +82,8 @@ export default function Hero() {
               <img
                 src="/image2.jpg"
                 alt="Fresh milk and dairy products"
-                // responsive heights: mobile smaller, desktop larger
-                className="w-full h-[300px] md:h-[450px] lg:h-[550px] object-cover block"
+                // responsive heights: mobile taller, desktop larger
+                className="w-full h-[400px] md:h-[450px] lg:h-[550px] object-cover block"
               />
             </div>
             {/* Decorative Elements */}
