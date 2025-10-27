@@ -36,6 +36,12 @@ const products = [
     image: 'https://www.indianhealthyrecipes.com/wp-content/uploads/2021/10/mawa-khoya-recipe.jpg',
     description: 'Sweet and delicious khava (mawa)',
     features: ['Sweet Treat', 'Traditional', 'Premium Quality']
+  },
+  {
+    name: 'Buttermilk (Taak)',
+    image: 'https://www.indianveggiedelight.com/wp-content/uploads/2023/01/masala-chaas-featured.jpg',
+    description: 'Refreshing spiced buttermilk drink',
+    features: ['Refreshing', 'Spiced', 'Traditional']
   }
 ];
 
