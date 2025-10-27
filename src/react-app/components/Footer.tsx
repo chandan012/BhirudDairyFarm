@@ -1,4 +1,4 @@
-import { Milk, Heart, MapPin, Phone, Mail } from 'lucide-react';
+import { Heart, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
